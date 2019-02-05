@@ -1,45 +1,52 @@
 import 'package:flutter/material.dart';
 import 'package:sample_blog/models/post_model.dart';
 import 'package:sample_blog/pages/post_page.dart';
+import 'package:sample_blog/widgets/post_bottomButtons_widget.dart';
 
 class PostCardWidget extends StatefulWidget {
   PostCardWidget(this._post);
-  Post _post;
-  
+  final Post _post;
+
   @override
-  State<StatefulWidget> createState() => new PostCardState(_post);
+  State<StatefulWidget> createState() => new PostCardState();
 }
+
 class PostCardState extends State<PostCardWidget> {
-  PostCardState(this._post);
-  Post _post;
+  void _openPost() {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => PostPage(widget._post)));
+    if (!widget._post.isVisited) {
+      widget._post.isVisited = true;
+      widget._post.visitsCount++;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Card(
-          child: Column(
-          children: <Widget>[
-            Image.network(this._post.imageUrl),
-            Padding(child: Text(this._post.title, maxLines: 1, style: TextStyle(fontSize: 20, letterSpacing: 3),), padding: EdgeInsets.all(16)),
-            Row(children: <Widget>[
-                Text(this._post.description, style: TextStyle(fontSize: 16))
-              ],
-            ),
-            ButtonTheme.bar(
-              child: ButtonBar(
-                children: <Widget>[
-                  Text(_post.isVisited ? "Visited" : "", style: TextStyle(fontSize: 18, color: Colors.grey)),
-                  FlatButton(
-                    child: const Text('Open', style: TextStyle(fontSize: 20),),
-                    onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => PostPage(this._post)));
-                    },
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-        );
+        child: Column(children: <Widget>[
+      Image.network(widget._post.imageUrl),
+      Padding(
+          child: Text(
+            widget._post.title,
+            maxLines: 1,
+            style: TextStyle(fontSize: 20, letterSpacing: 2),
+          ),
+          padding: EdgeInsets.all(16)),
+      Text(widget._post.description,
+          style: TextStyle(fontSize: 16),
+          maxLines: 3,
+          softWrap: true,
+          overflow: TextOverflow.fade),
+      Divider(color: Colors.grey),
+      Row(children: <Widget>[
+        PostBottomButtonsWidget(widget._post),
+        FlatButton(
+          child: Text('Open',
+              style: TextStyle(fontSize: 20, color: Colors.blueAccent)),
+          onPressed: _openPost,
+        )
+      ])
+    ]));
   }
-
 }
-

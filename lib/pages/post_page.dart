@@ -1,32 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:sample_blog/models/post_model.dart';
+import 'package:sample_blog/widgets/post_bottomButtons_widget.dart';
 
 class PostPage extends StatelessWidget {
   PostPage(this._post);
   final Post _post;
 
-  _add(){
-
-  }
-  _like(){
-
-  }
+  _report() {}
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(_post.title),
-      actions: <Widget>[
-        IconButton(icon: Icon(Icons.add), onPressed: _add),
-        IconButton(icon: Icon(Icons.favorite), onPressed: _like)
-      ],),
-      body: Column(
-        children: <Widget>[
-          Image.network(_post.imageUrl),
-          Text(_post.description)
-        ],
-      ),
-    );
+        appBar: AppBar(
+          title: Text(_post.title),
+          actions: <Widget>[
+            IconButton(icon: Icon(Icons.warning), onPressed: _report)
+          ],
+        ),
+        body: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              Image.network(_post.imageUrl),
+              Padding(
+                  padding: EdgeInsets.all(10), child: Text(_post.description)),
+              Divider(),
+              PostBottomButtonsWidget(_post)
+            ],
+          ),
+        ));
   }
-
 }
