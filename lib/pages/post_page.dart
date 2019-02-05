@@ -20,7 +20,7 @@ class PostPage extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              Image.network(_post.imageUrl),
+              Image.asset(_post.imageUrl),
               Padding(
                   padding: EdgeInsets.all(10), child: Text(_post.description)),
               Divider(),

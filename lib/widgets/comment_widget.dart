@@ -6,10 +6,10 @@ class CommentWidget extends StatefulWidget {
   final Comment _comment;
 
   @override
-  CommentState createState() => CommentState();
+  _CommentState createState() => _CommentState();
 }
 
-class CommentState extends State<CommentWidget> {
+class _CommentState extends State<CommentWidget> {
   _likeClick() {
     setState(() {
       if (widget._comment.isDisliked) {
@@ -49,8 +49,8 @@ class CommentState extends State<CommentWidget> {
       Row(
         children: <Widget>[
           Column(children: <Widget>[
-            Image.network(
-              "https://shlyapka.com/images/noavatar.png",
+            Image.asset(
+              "lib/resources/noavatar.png",
               width: 60,
             ),
             Text("Author"),

@@ -8,10 +8,10 @@ class PostCardWidget extends StatefulWidget {
   final Post _post;
 
   @override
-  State<StatefulWidget> createState() => new PostCardState();
+  _PostCardState createState() => new _PostCardState();
 }
 
-class PostCardState extends State<PostCardWidget> {
+class _PostCardState extends State<PostCardWidget> {
   void _openPost() {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (context) => PostPage(widget._post)));
@@ -25,7 +25,7 @@ class PostCardState extends State<PostCardWidget> {
   Widget build(BuildContext context) {
     return Card(
         child: Column(children: <Widget>[
-      Image.network(widget._post.imageUrl),
+      Image.asset(widget._post.imageUrl),
       Padding(
           child: Text(
             widget._post.title,

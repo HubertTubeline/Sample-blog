@@ -7,10 +7,10 @@ class PostBottomButtonsWidget extends StatefulWidget {
   final Post _post;
 
   @override
-  State<StatefulWidget> createState() => PostBottomButtonsState();
+  _PostBottomButtonsState createState() => _PostBottomButtonsState();
 }
 
-class PostBottomButtonsState extends State<PostBottomButtonsWidget> {
+class _PostBottomButtonsState extends State<PostBottomButtonsWidget> {
   _likeClick() {
     setState(() {
       if (widget._post.isDislike) {
@@ -44,9 +44,10 @@ class PostBottomButtonsState extends State<PostBottomButtonsWidget> {
   }
 
   _commentClick() {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => CommentsPage(widget._post)));
+    Navigator.of(context).push(
+        MaterialPageRoute(builder: (context) => CommentsPage(widget._post)));
   }
+
   _visitsClick() {}
 
   @override
