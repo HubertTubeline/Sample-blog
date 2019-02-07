@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:simple_blog/models/account_model.dart';
+import 'package:simple_blog/repositories/accountRepository.dart';
 import 'package:validate/validate.dart';
 
 class LoginPage extends StatefulWidget {
@@ -12,6 +14,12 @@ class _LoginData {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  _LoginPageState() {
+    _repository = new AccountRepository();
+  }
+
+  AccountRepository _repository;
+
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
   _LoginData _data = new _LoginData();
 
@@ -35,26 +43,39 @@ class _LoginPageState extends State<LoginPage> {
     return null;
   }
 
-  void submit() {
+  submit() {
     // First validate form.
     if (this._formKey.currentState.validate()) {
       _formKey.currentState.save(); // Save our form now.
 
-      print('Printing the login data.');
-      print('Email: ${_data.email}');
-      print('Password: ${_data.password}');
-      Navigator.of(context).pushReplacementNamed('/home');
+      _repository.login(_data.email, _data.password).then((result) {
+        if (result == null) {
+          var snackbar = SnackBar(
+            content: Text("Email or password is wrong"),
+          );
+          Scaffold.of(_formKey.currentContext).showSnackBar(snackbar);
+        } else {
+          Navigator.of(context).pushReplacementNamed('/home');
+        }
+      });
     }
   }
 
-  void test() {
-    Navigator.of(context).pushReplacementNamed('/home');
+  test() async {
+    var account =
+        new Account(email: "ad@min.com", firstName: "Test", lastName: "User");
+    var user = await _repository.login("ad@min.com", "");
+    if (user == null) user = await _repository.create(account);
+
+    var snackbar = SnackBar(
+      content: Text("Now try with 'ad@min.com' email"),
+    );
+    Scaffold.of(_formKey.currentContext).showSnackBar(snackbar);
   }
 
   @override
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
-
     return new Scaffold(
       appBar: new AppBar(
         title: new Text('Login'),

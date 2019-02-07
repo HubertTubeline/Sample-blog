@@ -9,8 +9,8 @@ class AccountPage extends StatefulWidget {
 
 class _AccountState extends State<AccountPage> {
   static _getAccount() {
-    return new Account(0,
-        email: "blog@gmail.com", firstName: "John", lastName: "Doe");
+    return new Account(
+        id: 0, email: "blog@gmail.com", firstName: "John", lastName: "Doe");
   }
 
   _openLikedPosts() {
