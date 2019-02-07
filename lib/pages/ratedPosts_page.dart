@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sample_blog/models/account_model.dart';
+import 'package:simple_blog/models/account_model.dart';
 
 class RatedPostsPage extends StatelessWidget {
   RatedPostsPage(this._account, {this.isLiked: false, this.isDisliked: false});

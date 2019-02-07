@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sample_blog/models/post_model.dart';
-import 'package:sample_blog/widgets/post_bottomButtons_widget.dart';
+import 'package:simple_blog/models/post_model.dart';
+import 'package:simple_blog/widgets/post_bottomButtons_widget.dart';
 
 class PostPage extends StatelessWidget {
   PostPage(this._post);

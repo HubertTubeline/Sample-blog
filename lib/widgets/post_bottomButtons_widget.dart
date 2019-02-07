@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sample_blog/models/post_model.dart';
-import 'package:sample_blog/pages/comments_page.dart';
+import 'package:simple_blog/models/post_model.dart';
+import 'package:simple_blog/pages/comments_page.dart';
 
 class PostBottomButtonsWidget extends StatefulWidget {
   PostBottomButtonsWidget(this._post);

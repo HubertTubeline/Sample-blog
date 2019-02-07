@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sample_blog/pages/account_page.dart';
-import 'package:sample_blog/pages/blog_page.dart';
-import 'package:sample_blog/pages/home_page.dart';
-import 'package:sample_blog/pages/login_page.dart';
+import 'package:simple_blog/pages/account_page.dart';
+import 'package:simple_blog/pages/blog_page.dart';
+import 'package:simple_blog/pages/home_page.dart';
+import 'package:simple_blog/pages/login_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     var isAuth = _checkAuth();
     if (isAuth)
       return MaterialApp(
-        title: 'Sample blog',
+        title: 'simple blog',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       );
     else
       return MaterialApp(
-        title: 'Sample blog',
+        title: 'simple blog',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),

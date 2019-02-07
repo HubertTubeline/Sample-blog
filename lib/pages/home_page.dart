@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sample_blog/pages/account_page.dart';
-import 'package:sample_blog/pages/blog_page.dart';
+import 'package:simple_blog/pages/account_page.dart';
+import 'package:simple_blog/pages/blog_page.dart';
 
 class DrawerItem {
   String title;

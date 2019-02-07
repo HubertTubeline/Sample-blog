@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sample_blog/models/account_model.dart';
-import 'package:sample_blog/pages/ratedPosts_page.dart';
+import 'package:simple_blog/models/account_model.dart';
+import 'package:simple_blog/pages/ratedPosts_page.dart';
 
 class AccountPage extends StatefulWidget {
   @override

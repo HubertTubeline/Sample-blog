@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sample_blog/models/comment_model.dart';
-import 'package:sample_blog/models/jsonPost_model.dart';
-import 'package:sample_blog/models/post_model.dart';
-import 'package:sample_blog/widgets/post_card_widget.dart';
+import 'package:simple_blog/models/comment_model.dart';
+import 'package:simple_blog/models/jsonPost_model.dart';
+import 'package:simple_blog/models/post_model.dart';
+import 'package:simple_blog/widgets/post_card_widget.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
@@ -33,7 +33,7 @@ class _BlogState extends State<BlogPage> {
     var list = new List<Comment>();
     for (int i = 0; i < commentsCount; i++) {
       list.add(new Comment(i, 0, postId,
-          title: "Simple comment for sample post",
+          title: "Simple comment for simple post",
           dislikesCount: 0,
           isDisliked: false,
           likesCount: 0,

@@ -1,4 +1,4 @@
-import 'package:sample_blog/models/comment_model.dart';
+import 'package:simple_blog/models/comment_model.dart';
 
 class Post {
   Post(this.postId,

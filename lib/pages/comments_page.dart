@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sample_blog/models/post_model.dart';
-import 'package:sample_blog/widgets/comment_widget.dart';
+import 'package:simple_blog/models/post_model.dart';
+import 'package:simple_blog/widgets/comment_widget.dart';
 
 class CommentsPage extends StatelessWidget {
   CommentsPage(this._post);

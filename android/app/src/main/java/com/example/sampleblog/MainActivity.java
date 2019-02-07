@@ -1,4 +1,4 @@
-package com.example.sampleblog;
+package com.example.simpleblog;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;
