@@ -21,8 +21,7 @@ class PostPage extends StatelessWidget {
           child: Column(
             children: <Widget>[
               Image.asset(_post.imageUrl),
-              Padding(
-                  padding: EdgeInsets.all(10), child: Text(_post.description)),
+              Padding(padding: EdgeInsets.all(10), child: Text(_post.body)),
               Divider(),
               PostBottomButtonsWidget(_post)
             ],

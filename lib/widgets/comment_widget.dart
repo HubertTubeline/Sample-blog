@@ -64,7 +64,8 @@ class _CommentState extends State<CommentWidget> {
         ],
       ),
       Divider(),
-      Row(mainAxisAlignment: MainAxisAlignment.end,
+      Row(
+        mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
           new Container(
             child: IconButton(

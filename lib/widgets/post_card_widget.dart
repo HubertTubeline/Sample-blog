@@ -25,7 +25,7 @@ class _PostCardState extends State<PostCardWidget> {
   Widget build(BuildContext context) {
     return Card(
         child: Column(children: <Widget>[
-      Image.asset(widget._post.imageUrl),
+      Image.asset(widget?._post?.imageUrl ?? "lib/resources/post0.png"),
       Padding(
           child: Text(
             widget._post.title,
@@ -33,7 +33,7 @@ class _PostCardState extends State<PostCardWidget> {
             style: TextStyle(fontSize: 20, letterSpacing: 2),
           ),
           padding: EdgeInsets.all(16)),
-      Text(widget._post.description,
+      Text(widget._post.body,
           style: TextStyle(fontSize: 16),
           maxLines: 3,
           softWrap: true,

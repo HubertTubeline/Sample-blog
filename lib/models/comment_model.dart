@@ -1,6 +1,10 @@
 class Comment {
-Comment(this.commentId, this.authorId, this.postId, this.title,
-{this.likesCount, this.dislikesCount, this.isDisliked, this.isLiked});
+  Comment(this.commentId, this.authorId, this.postId,
+      {this.title,
+      this.likesCount,
+      this.dislikesCount,
+      this.isDisliked,
+      this.isLiked});
 
   int commentId;
   int postId;

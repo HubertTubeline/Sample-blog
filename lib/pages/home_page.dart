@@ -60,6 +60,10 @@ class _HomePageState extends State<HomePage> {
         child: new Column(
           children: <Widget>[
             new UserAccountsDrawerHeader(
+              decoration: new BoxDecoration(
+                  image: new DecorationImage(
+                      image: AssetImage("lib/resources/post2.jpg"),
+                      fit: BoxFit.cover)),
               accountName: new Text("John Doe"),
               accountEmail: new Text("sampl@sam.com"),
               currentAccountPicture: Image.asset("lib/resources/face.png"),
